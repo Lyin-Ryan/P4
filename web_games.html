@@ -53,7 +53,22 @@
             </nav>
             <section class="mm">
                 <h3>Museum Mongrel</h3>
-                <iframe src="webGames\MMFinal\index.html" width="800" height="600" frameborder="0" allowfullscreen></iframe>
+                <button id="mm-btn">Play Game</button>
+                <script>
+                document.getElementById('mm-btn').addEventListener('click', function() {
+                    // Remove the button
+                    this.remove(); 
+                    
+                    // Create and load the game iframe only after the click
+                    const iframe = document.createElement('iframe');
+                    iframe.src = 'webGames\MMFinal\index.html'; 
+                    iframe.width = '800';
+                    iframe.height = '600';
+                    iframe.style.border = 'none';
+                    
+                    document.getElementByClass('mm').appendChild(iframe);
+                });
+                </script>
             </section>
 </div>
         </div>
